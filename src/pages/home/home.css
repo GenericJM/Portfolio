@@ -1,0 +1,56 @@
+.Personalinfo {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 5px 1px #eaeaea;
+    margin: 5em auto;
+    border-radius: 1em;
+    padding: 3em;
+    gap: 2em;
+    width: fit-content;
+    line-height: 1.5em;
+    font-size:clamp(0.5em ,1.3vw,2em);
+}
+.Personalinfo-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* background-color: red; */
+    width: 100%;
+}
+.main-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.phone, .email{
+    display: flex;
+    gap: 0.5em;
+}
+/* .email{
+    display: flex;
+    gap: 0.5em;    
+} */
+
+
+
+.Personalinfo-name {
+    font-size: 2em;
+}
+
+.image-container {
+    display: flex;
+    width: 40%;
+    height: max(9em,20vw);
+    /* clamp(9em,20vw,) */
+    background-color: aqua;
+}
+
+.Personalinfo-image {
+    object-fit:cover;
+    border-radius: 1em;
+    /* width: 50%; */
+    /* height: 15em; */
+    margin: 0 auto;
+
+    /* aspect-ratio: 9/20; */
+}
