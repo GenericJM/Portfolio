@@ -1,7 +1,7 @@
 :root{
   --title-color:#4F4F4F;
   --text-color:#828282;  
-  --background: #f2f2f2;
+  --background: #f2f2f2;  
   --section:#ffff;
 }
 body{
@@ -12,6 +12,8 @@ body{
  width:max(40em,80%);
  /* clamp(40em,80%,75em)  */
  margin: 0 auto;
+ /* display: flex;
+ flex-direction: column; */
  
 }
 *{
@@ -33,6 +35,9 @@ body{
 }
 .section{
   background-color:var(--section) ;
+  box-shadow: 0px 5px 1px #eaeaea;
+  padding: 2em;
+  border-radius: 1em;
 }
 
 .material-symbols-outlined {

@@ -1,18 +1,20 @@
 import foto from "../../assets/foto.png"
 import "./home.css"
+import Abilities from "../../components/Abilities"
 export default function Home(){
  
   return( 
     
     <>
-
       <Personalinfo/>
-      <Experience/>
+      <Abilities/>
     </>
   
   ) 
 }
-const Personalinfo=()=>{
+const Personalinfo = () => {
+  console.log("hola");
+  
   return(
     <section className="Personalinfo section">
       <picture className="image-container">
@@ -47,14 +49,6 @@ const Personalinfo=()=>{
         crear aplicaciones de interfaz de usuario sobresalientes.
         </p>
       </div>
-     
-
-    
     </section>
   )
-}
-const Experience=()=>{
-  <section className="experience">
-
-  </section>
 }
