@@ -1,13 +1,15 @@
 import foto from "../../assets/foto.png"
 import "./home.css"
-import Abilities from "../../components/Abilities"
+import Skills from "../../components/skills/Skills"
+import Projects from "../../components/projects"
 export default function Home(){
  
   return( 
     
     <>
       <Personalinfo/>
-      <Abilities/>
+      <Skills />
+      <Projects/>
     </>
   
   ) 

@@ -1,0 +1,22 @@
+.projects{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20em,1fr));
+    gap:1.1em;
+    /* background-color: #ddd; */
+}
+.project__image{
+    object-fit: contain;
+}
+.project__element{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffff;
+    border-radius: 1em;
+    padding: 1em;
+    gap: 1em;
+}
+.project__tag{
+    display: flex;
+    gap: 1em;
+    
+}

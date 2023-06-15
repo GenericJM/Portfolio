@@ -8,6 +8,9 @@ body{
   background: var(--background);
 
 }
+a{
+  text-decoration: none;
+}
 #root{
  width:max(40em,80%);
  /* clamp(40em,80%,75em)  */
@@ -38,6 +41,7 @@ body{
   box-shadow: 0px 5px 1px #eaeaea;
   padding: 2em;
   border-radius: 1em;
+  margin: 5em auto;
 }
 
 .material-symbols-outlined {
