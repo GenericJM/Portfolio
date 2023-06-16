@@ -36,9 +36,11 @@ a{
 .subtitle{
   color: var(--subtitle-text);
 }
-.section{
+.default{
   background-color:var(--section) ;
   box-shadow: 0px 5px 1px #eaeaea;
+}
+.section{ 
   padding: 2em;
   border-radius: 1em;
   margin: 5em auto;

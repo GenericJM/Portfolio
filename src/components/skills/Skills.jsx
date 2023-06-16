@@ -7,7 +7,7 @@ const styles={
 export default function Skills() {
     return(
       
-      <section className="skills section">
+      <section className="skills section default">
         <h1>FRONT END</h1>
         <Skill name={"react"} level={20} />
         <Skill name={"html"} level={80} />

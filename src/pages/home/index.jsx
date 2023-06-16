@@ -1,7 +1,7 @@
-import foto from "../../assets/foto.png"
+import foto from "@/assets/foto.png"
 import "./home.css"
-import Skills from "../../components/skills/Skills"
-import Projects from "../../components/projects"
+import Skills from "@/components/skills/Skills"
+import Projects from "@/components/projects"
 export default function Home(){
  
   return( 
@@ -18,7 +18,7 @@ const Personalinfo = () => {
   console.log("hola");
   
   return(
-    <section className="Personalinfo section">
+    <section className="Personalinfo section default">
       <picture className="image-container">
         <img className="Personalinfo-image" src={foto}/>
       </picture>
