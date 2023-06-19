@@ -3,6 +3,7 @@
   --text-color:#828282;  
   --background: #f2f2f2;  
   --section:#ffff;
+  --blue:#2F80ED;
 }
 body{
   background: var(--background);
@@ -12,7 +13,7 @@ a{
   text-decoration: none;
 }
 #root{
- width:max(40em,80%);
+ width:max(40em,90%);
  /* clamp(40em,80%,75em)  */
  margin: 0 auto;
  /* display: flex;
@@ -39,11 +40,11 @@ a{
 .default{
   background-color:var(--section) ;
   box-shadow: 0px 5px 1px #eaeaea;
+  border-radius: 1em;
+  padding: 2em;  
 }
 .section{ 
-  padding: 2em;
-  border-radius: 1em;
-  margin: 5em auto;
+  margin: 2em auto;
 }
 
 .material-symbols-outlined {
@@ -52,4 +53,8 @@ a{
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
+}
+.selected{
+  color:#fff;
+  background-color: var(--blue);
 }

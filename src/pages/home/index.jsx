@@ -7,16 +7,21 @@ export default function Home(){
   return( 
     
     <>
-      <Personalinfo/>
-      <Skills />
+      <Personalinfo />
+      <main className="main">
+        <Skills />
+        <div>
       <Projects/>
+
+        </div>
+      </main>
+      
     </>
   
   ) 
 }
 const Personalinfo = () => {
-  console.log("hola");
-  
+
   return(
     <section className="Personalinfo section default">
       <picture className="image-container">

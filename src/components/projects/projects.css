@@ -1,25 +1,40 @@
 .projects{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20em,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(15em,1fr));
     gap:1.1em;
     /* background-color: #ddd; */
 }
-.projects-title{
+.projects__header{
     margin-bottom: 1em;
     padding: 1em;
+}
+.projects-title{
+    margin-bottom: 0.5em;  
+}
+.project__filter{
+    display: flex;
+    gap:1em;
 }
 .project__image{
     object-fit: contain;
 }
 .project__element{
     display: flex;
-    flex-direction: column;   
-    border-radius: 1em;
+    flex-direction: column;     
     padding: 1em;
     gap: 1em;
 }
-.project__tag{
-    display: flex;
-    gap: 1em;
-    
+.project__button-shape{
+    padding:.6em;   
+    border-radius: 0.5em;    
+}
+
+.project__button-colors{
+    background-color: transparent;
+    border:1px solid #000;
+}
+.project__button-code{
+    background-color: transparent;
+    border:1px solid #2F80ED;
+    color: #2F80ED;
 }

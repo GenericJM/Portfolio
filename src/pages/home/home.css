@@ -1,14 +1,12 @@
 .Personalinfo {
     display: flex;
     flex-direction: row;
-   
-    
-   
     gap: 2em;
-    width: fit-content;
+    /* width: fit-content; */
     line-height: 1.5em;
     font-size:clamp(0.5em ,1.3vw,2em);
 }
+
 .Personalinfo-contact {
     display: flex;
     flex-direction: column;
@@ -24,6 +22,12 @@
 .phone, .email{
     display: flex;
     gap: 0.5em;
+}
+.main{
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    gap: .5em;
+    background-color: aqua;
 }
 /* .email{
     display: flex;
