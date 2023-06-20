@@ -2,6 +2,7 @@ import foto from "@/assets/foto.png"
 import "./home.css"
 import Skills from "@/components/skills/Skills"
 import Projects from "@/components/projects"
+import Hobbies from "@/components/hobbies"
 export default function Home(){
  
   return( 
@@ -9,10 +10,12 @@ export default function Home(){
     <>
       <Personalinfo />
       <main className="main">
-        <Skills />
+        <div>
+         <Skills />
+         <Hobbies/> 
+        </div>
         <div>
       <Projects/>
-
         </div>
       </main>
       

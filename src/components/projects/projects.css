@@ -15,9 +15,6 @@
     display: flex;
     gap:1em;
 }
-.project__image{
-    object-fit: contain;
-}
 .project__element{
     display: flex;
     flex-direction: column;     

@@ -45,7 +45,7 @@ export default function Projects() {
 }
 const Project = ({ content }) => {
     return <article className="project__element default">
-        <img src={content.image} className="project__image"></img>
+        <img src={content.image} className="image"></img>
         <div className="project__filter">{content.tag.map(tag => <a key={tag} href="">{tag}</a>)}</div>
         <h1>{content.name}</h1>
         <div className="project__filter">

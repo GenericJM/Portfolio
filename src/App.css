@@ -9,6 +9,10 @@ body{
   background: var(--background);
 
 }
+.image{
+  object-fit: contain;
+  width: 100%;
+}
 a{
   text-decoration: none;
 }
