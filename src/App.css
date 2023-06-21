@@ -1,6 +1,7 @@
 :root{
   --title-color:#4F4F4F;
   --text-color:#828282;  
+  --subtitle-color:#333333;
   --background: #f2f2f2;  
   --section:#ffff;
   --blue:#2F80ED;
@@ -34,12 +35,17 @@ a{
 
 .title{
   color:var(--title-color) ;
+  margin-bottom: 0.5em;  
+  font-size: 1.5em;
+}
+.subtitle{
+  color:var(--subtitle-color)
 }
 .text{
   color: var(--text-color);
 }
-.subtitle{
-  color: var(--subtitle-text);
+.other-text{
+  color:var(--title-color) ;
 }
 .default{
   background-color:var(--section) ;
@@ -47,6 +53,7 @@ a{
   border-radius: 1em;
   padding: 2em;  
 }
+
 .section{ 
   margin: 2em auto;
 }

@@ -1,4 +1,8 @@
 .hobbie{
     width: 100%;
     background-color: #fda;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em  ;
 }

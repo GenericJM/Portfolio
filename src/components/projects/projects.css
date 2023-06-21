@@ -8,9 +8,9 @@
     margin-bottom: 1em;
     padding: 1em;
 }
-.projects-title{
+/* .projects-title{
     margin-bottom: 0.5em;  
-}
+} */
 .project__filter{
     display: flex;
     gap:1em;
@@ -28,7 +28,9 @@
 
 .project__button-colors{
     background-color: transparent;
-    border:1px solid #000;
+    border:1px solid #4f4f4f;
+    color: #4f4f4f;
+    
 }
 .project__button-code{
     background-color: transparent;
