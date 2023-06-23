@@ -10,6 +10,7 @@ export const projects = {
             link: "https://fascinating-naiad-efc2e8.netlify.app",
             code: "https://github.com/GenericJM/Error-404",
             image: "https://screenshot-proxy.netlify.app/f_webp,w_336/https://d33wubrfki0l68.cloudfront.net/628d666c02905d0008a5dc53/screenshot_2022-05-24-23-12-51-0000.png",
+            description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ipsam impedit vel accusantium numquam perferendis cum reprehenderit, laborum sint soluta quo voluptate earum, unde ad consectetur optio eius amet. Molestias!",
             tag: [tag.html, tag.css]
         },
         {

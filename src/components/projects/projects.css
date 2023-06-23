@@ -1,6 +1,6 @@
 .projects{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(18em,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(15em,1fr));
     gap:1.1em;
     /* background-color: #ddd; */
 }

@@ -3,62 +3,62 @@ import "./home.css"
 import Skills from "@/components/skills/Skills"
 import Projects from "@/components/projects"
 import Hobbies from "@/components/hobbies"
-export default function Home(){
- 
-  return( 
-    
+export default function Home() {
+
+  return (
+
     <>
       <Personalinfo />
       <main className="main">
         <div>
-         <Skills />
-         <Hobbies/> 
+          <Skills />
+          <Hobbies />
         </div>
         <div>
-      <Projects/>
+          <Projects />
         </div>
       </main>
-      
+
     </>
-  
-  ) 
+
+  )
 }
 const Personalinfo = () => {
 
-  return(
-    <section className="Personalinfo section default">
+  return (
+    <main className="Personalinfo section default">
       <picture className="image-container">
-        <img className="Personalinfo-image" src={foto}/>
+        <img className="Personalinfo-image" src={foto} />
       </picture>
-     
-      <div className="Personalinfo-contact">
+
+      <section className="Personalinfo-contact">
         <div className="main-info">
           <div>
             <h1 className="Personalinfo-name title">Juan Marcano</h1>
-            <h3 className="text">aspirante</h3>
+            <h2 className="text">aspirante</h2>
           </div>
-        
+
           <div className="text">
             <div className="email">
               <span className="material-symbols-outlined">
-          mail
-              </span>  
-              <h2>infoJuanMarcano@gmail.com</h2>
+                mail
+              </span>
+              <h3>infoJuanMarcano@gmail.com</h3>
             </div>
             <div className="phone">
               <span className="material-symbols-outlined">
-            call
+                call
               </span>
-              <h2>(+58) 04248221022</h2> 
+              <h3>(+58) 04248221022</h3>
 
             </div>
           </div>
         </div>
         <p className="text">
-        Desarrollador motivado, que está dispuesto a aprender y 
-        crear aplicaciones de interfaz de usuario sobresalientes.
+          Desarrollador motivado, que está dispuesto a aprender y
+          crear aplicaciones de interfaz de usuario sobresalientes.
         </p>
-      </div>
-    </section>
+      </section>
+    </main>
   )
 }

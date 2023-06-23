@@ -7,7 +7,7 @@ export default function Hobbies() {
             <h1 className="title">Hobbies</h1>
             
             {hobbies.hobbie.map(x => { 
-               return <article className="hobbie">
+               return <article  key={x.name} className="hobbie">
                     <img className="image" src={x.image}></img>
                     <h2 className="subtitle">{x.name}</h2>
                     <p className="text"> {x.description}</p>

@@ -1,71 +1,106 @@
-:root{
-  --title-color:#4F4F4F;
-  --text-color:#828282;  
-  --subtitle-color:#333333;
-  --background: #f2f2f2;  
-  --section:#ffff;
-  --blue:#2F80ED;
+:root {
+  --title-color: #4F4F4F;
+  --text-color: #828282;
+  --subtitle-color: #333333;
+  --background: #f2f2f2;
+  --section: #ffff;
+  --blue: #2F80ED;
 }
-body{
-  background: var(--background);
 
-}
-.image{
-  object-fit: contain;
-  width: 100%;
-}
-a{
-  text-decoration: none;
-}
-#root{
- width:max(40em,90%);
- /* clamp(40em,80%,75em)  */
- margin: 0 auto;
- /* display: flex;
- flex-direction: column; */
- 
-}
-*{
+* {
   margin: 0;
-  padding:0;
-  color: inherit;
+  padding: 0;
   /* font-size: 1em; */
   /* background: var(--background); */
 }
 
-.title{
-  color:var(--title-color) ;
-  margin-bottom: 0.5em;  
-  font-size: 1.5em;
-}
-.subtitle{
-  color:var(--subtitle-color)
-}
-.text{
-  color: var(--text-color);
-}
-.other-text{
-  color:var(--title-color) ;
-}
-.default{
-  background-color:var(--section) ;
-  box-shadow: 0px 5px 1px #eaeaea;
-  border-radius: 1em;
-  padding: 2em;  
+body {
+  background: var(--background);
+ width:90%;
+ margin:0 auto;
 }
 
-.section{ 
+.image {
+  object-fit: contain;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+#root {
+  /* width: max(40em, 90%); */
+  margin: 0 auto;
+
+}
+
+.title {
+  color: var(--title-color);
+  margin-bottom: 0.5em;
+  font-size: clamp(0.5em, 3vw, 2em);
+  /* font-size: 1.5em; */
+}
+
+.title-small {
+  color: var(--title-color);
+  font-size: clamp(0.5em, 1.5vw, 2em);
+}
+
+.subtitle {
+  color: var(--subtitle-color);
+  font-size: clamp(0.5em, 10vw, 2em);
+
+}
+
+.text {
+  color: var(--text-color);
+  font-size: clamp(0.5em, 1.5vw, 2em);
+}
+
+.other-text {
+  color: var(--title-color);
+}
+
+.default {
+  background-color: var(--section);
+  box-shadow: 0px 5px 1px #eaeaea;
+  border-radius: 1em;
+  padding: 2em;
+}
+
+.section {
   margin: 2em auto;
 }
 
 .material-symbols-outlined {
   font-variation-settings:
-  'FILL' 1,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
 }
-.selected{
-  color:#fff;
+
+.selected {
+  color: #fff;
   background-color: var(--blue);
+}
+
+@media (max-width:800px) {
+  body {
+   width: 98%;
+   margin:0 auto;
+  }
+  .title {       
+    font-size: clamp(0.5em, 5vw, 2em);
+    /* font-size: 1.5em; */
+  }
+  .text {
+    color: var(--text-color);
+    font-size: clamp(0.5em, 3vw, 2em);
+  }
+  .title-small {
+    font-size: clamp(0.5em, 10vw, 2em);
+  }
 }
