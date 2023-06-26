@@ -14,7 +14,7 @@ const useProjects = (keyword) => {
     console.log(keyword);
     const [projectList, setProjects] = useState(projects.project);
     useEffect(() => {
-        keyword ? setProjects(projects.project.filter(x => x.tag.includes(keyword))):setProjects(projects.project);
+        keyword ? setProjects(projects.project.filter(x => x.tag.includes(keyword))) : setProjects(projects.project);
 
     }, [keyword]
 
@@ -35,8 +35,8 @@ export default function Projects() {
                     {Object.values(tag).map(x =>
                         <button
                             style={x === key ? styles.buttonSelected : styles.button}
-                            className="project__button-shape project__button-colors"
-                            onClick={() => { key!=x ? setKey(x):setKey(null)}}
+                            className="project__button-shape project__button-colors other-text"
+                            onClick={() => { key != x ? setKey(x) : setKey(null) }}
                             key={x}>{x}
                         </button>
                     )}
@@ -46,7 +46,7 @@ export default function Projects() {
             <section className="projects">
                 {
                     projectList.map(content => {
-                        return <Project content={content} key={content.link} />;
+                        return <Project content={content}  setKey={setKey} key={content.link} />;
                     })
                 }
 
@@ -57,17 +57,20 @@ export default function Projects() {
     )
 
 }
-const Project = ({ content }) => {
+const Project = ({ content, setKey }) => {   
     
     return <article className="project__element default">
         <img src={content.image} className="image"></img>
         {/*modificar por componente*/}
-        <div className="project__filter">{content.tag.map(tag => <a className="other-text" key={tag} href="">{tag}</a>)}</div>
-        <h1 className="subtitle">{content.name}</h1>
-        <p className="text">{content.description} </p>
-        <div className="project__filter">
-            <button className="project__button-shape" style={styles.buttonSelected} onClick={() => window.open(content.link)}>demo</button>
-            <button className="project__button-shape project__button-code" onClick={() => window.open(content.code)}>code</button>
+        <div className="project__element-div">
+            <div className="project__filter">{content.tag.map(tag => <button className="other-text project-tag" key={tag} onClick={() => { setKey(tag) }}>{tag}</button>)}</div>
+            <h1 className="subtitle">{content.name}</h1>
+            <p className="text">{content.description} </p>
+            <div className="project__filter">
+                <button className="project__button-shape other-text" style={styles.buttonSelected} onClick={() => window.open(content.link)}>demo</button>
+                <button className="project__button-shape project__button-code other-text" onClick={() => window.open(content.code)}>code</button>
+            </div>
+
         </div>
 
     </article>

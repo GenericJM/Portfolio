@@ -61,6 +61,7 @@ a {
 
 .other-text {
   color: var(--title-color);
+  font-size: clamp(1em, 2vw, 1.5em);
 }
 
 .default {

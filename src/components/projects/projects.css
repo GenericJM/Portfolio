@@ -1,6 +1,6 @@
 .projects{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(15em,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20em,1fr));
     gap:1.1em;
     /* background-color: #ddd; */
 }
@@ -16,10 +16,20 @@
     gap:1em;
 }
 .project__element{
-    display: flex;
-    flex-direction: column;     
+    display: grid;
+    /* flex-direction: row;      */
+    /* grid-template-columns:  1fr 1fr; */
+    grid-template-columns:repeat(auto-fit, minmax(20em,1fr));
+   
     padding: 1em;
     gap: 1em;
+}
+.project__element-div{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between ;
+    gap: 1em;
+    
 }
 .project__button-shape{
     padding:.6em;   
@@ -32,8 +42,23 @@
     color: #4f4f4f;
     
 }
+.project-tag{
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+}
 .project__button-code{
     background-color: transparent;
     border:1px solid #2F80ED;
     color: #2F80ED;
+}
+@media (max-width:750px) {
+    .project__element{
+        display: flex;
+        flex-direction: column;     
+        /* grid-template-columns: 35% 1fr; */
+/*        
+        padding: 1em;
+        gap: 1em; */
+    }
 }
