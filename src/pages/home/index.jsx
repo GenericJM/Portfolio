@@ -13,6 +13,7 @@ export default function Home() {
         <div>
           <Skills />
           <Hobbies />
+          {/* https://www.freecodecamp.org/fcc9236c317-77b0-4702-adea-1ec384c4e2e2 */}
         </div>
         <div>
           <Projects />

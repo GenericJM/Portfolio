@@ -60,12 +60,18 @@ export default function Projects() {
 const Project = ({ content, setKey }) => {   
     
     return <article className="project__element default">
+        <picture>
         <img src={content.image} className="image"></img>
+        
+        </picture>
         {/*modificar por componente*/}
         <div className="project__element-div">
+        <div>
             <div className="project__filter">{content.tag.map(tag => <button className="other-text project-tag" key={tag} onClick={() => { setKey(tag) }}>{tag}</button>)}</div>
             <h1 className="subtitle">{content.name}</h1>
-            <p className="text">{content.description} </p>
+           
+          </div>
+        <p className="text">{content.description} </p>
             <div className="project__filter">
                 <button className="project__button-shape other-text" style={styles.buttonSelected} onClick={() => window.open(content.link)}>demo</button>
                 <button className="project__button-shape project__button-code other-text" onClick={() => window.open(content.code)}>code</button>

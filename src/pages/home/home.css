@@ -61,7 +61,7 @@
 } */
 .main{
     display: grid;
-    grid-template-columns: 30% 1fr;
+    grid-template-columns: 35% 1fr;
     gap: .5em;
     background-color: aqua;
 }

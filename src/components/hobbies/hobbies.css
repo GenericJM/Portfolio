@@ -4,5 +4,15 @@
     margin-bottom: 1em;
     display: flex;
     flex-direction: column;
-    gap: 0.5em  ;
+    justify-content: space-between;
+    /* gap: 0.5em  ; */
 }
+@media (max-width:800px) {
+   .hobbies{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+    gap:1em;
+   }
+    
+       
+    }
