@@ -41,6 +41,7 @@
     padding: .6em;
     border-radius: 0.5em;
     max-height: 3em;
+    cursor: pointer;
 }
 
 .project__button-colors {

@@ -7,10 +7,16 @@
     justify-content: space-between;
     /* gap: 0.5em  ; */
 }
+.certificate{
+    box-shadow: 1px 5px 5px #aaa; 
+}
+.certificate:hover{
+    box-shadow:none;     
+}
 @media (max-width:800px) {
    .hobbies{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(1em, 1fr));
     gap:1em;
    }
     

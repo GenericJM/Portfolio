@@ -3,6 +3,7 @@ import "./home.css"
 import Skills from "@/components/skills/Skills"
 import Projects from "@/components/projects"
 import Hobbies from "@/components/hobbies"
+import Certificates from "@/components/certificates"
 export default function Home() {
 
   return (
@@ -10,15 +11,16 @@ export default function Home() {
     <>
       <Personalinfo />
       <main className="main">
-        <div>
+        <aside>
           <Skills />
           <Hobbies />
-          {/* https://www.freecodecamp.org/fcc9236c317-77b0-4702-adea-1ec384c4e2e2 */}
-        </div>
+          <Certificates/>
+        </aside>
         <div>
           <Projects />
         </div>
       </main>
+      <Footer />
 
     </>
 
@@ -62,4 +64,9 @@ const Personalinfo = () => {
       </section>
     </main>
   )
+}
+const Footer = () => {
+  return <footer className="footer">
+    <h5 class=" text">created by <a target="_blank" href="https://devchallenges.io/portfolio/GenericJM">GenericJM</a> - devChallenges.io</h5>
+  </footer>
 }

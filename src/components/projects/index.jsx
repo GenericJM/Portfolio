@@ -30,8 +30,7 @@ export default function Projects() {
         <>
             <header className="default projects__header">
                 <h1 className="projects-title title">Projects ({projectList.length})</h1>
-                <div className="project__filter">
-                    {/*va con esto*/}
+                <div className="project__filter">                
                     {Object.values(tag).map(x =>
                         <button
                             style={x === key ? styles.buttonSelected : styles.button}
@@ -64,7 +63,7 @@ const Project = ({ content, setKey }) => {
         <img src={content.image} className="image"></img>
         
         </picture>
-        {/*modificar por componente*/}
+        
         <div className="project__element-div">
         <div>
             <div className="project__filter">{content.tag.map(tag => <button className="other-text project-tag" key={tag} onClick={() => { setKey(tag) }}>{tag}</button>)}</div>
