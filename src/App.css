@@ -43,7 +43,7 @@ body {
 
 .title-small {
   color: var(--title-color);
-  font-size: clamp(0.5em, 1.5vw, 2em);
+  font-size: clamp(1em, 1.5vw, 2em);
 }
 
 .subtitle {
@@ -102,9 +102,11 @@ body {
     /* font-size: 1.5em; */
   }
   .title-small {
-    font-size: clamp(0.5em, 10vw, 2em);
+    font-size: clamp(0.5em, 5vw, 2em);
   }
   
-  
+  .text {  
+    font-size: clamp(0.5em, 3vw, 2em);
+  }
  
 }
