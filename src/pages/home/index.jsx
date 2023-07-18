@@ -1,4 +1,4 @@
-import foto from "@/assets/foto.png"
+import foto from "@/assets/artwork.png"
 import "./home.css"
 import Skills from "@/components/skills/Skills"
 import Projects from "@/components/projects"
@@ -67,6 +67,6 @@ const Personalinfo = () => {
 }
 const Footer = () => {
   return <footer className="footer">
-    <h5 class=" text">created by <a target="_blank" href="https://devchallenges.io/portfolio/GenericJM">GenericJM</a> - devChallenges.io</h5>
+    <h5 class="text">created by <a target="_blank" href="https://devchallenges.io/portfolio/GenericJM">GenericJM</a> - devChallenges.io</h5>
   </footer>
 }
