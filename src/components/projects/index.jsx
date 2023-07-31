@@ -28,12 +28,8 @@ export default function Projects() {
     //mover a un componente independiente
     const [key, setKey] = useState(null);
     const projectList = useProjects(key)
-    const [pagination,page,lastPage, setPage] = usePage(projectList);
+    const [pagination, page, lastPage, setPage] = usePage(projectList);
     
-    const handleNextPage = () => { setPage(prevPage => prevPage+1) }
-    const handlePrevPage = () => { setPage(prevPage=>prevPage-1)}
-    
-
     return (
         <>
             <header className="default projects__header">
@@ -59,7 +55,7 @@ export default function Projects() {
                 }
 
             </section>
-            <PageComponent handleNextPage={handleNextPage} handlePrevPage={handlePrevPage} page={page} lastPage={lastPage} />
+            <PageComponent setPage={setPage} page={page} lastPage={lastPage} />
         </>
 
     )
@@ -89,23 +85,27 @@ const Project = ({ content, setKey }) => {
 
     </article>
 }
-const PageComponent = ({ handleNextPage, handlePrevPage, page, lastPage }) => { 
-   
-  return  <section className="page">
+const PageComponent = ({setPage, page, lastPage }) => { 
+    const handleNextPage = () => { setPage(prevPage => prevPage+1) }
+    const handlePrevPage = () => { setPage(prevPage=>prevPage-1)}
+  return  <section className="pageButtons">
     {page > 0 ?
         <button
-            className="project__button-shape project__button-colors other-text"
+            className="project__button-shape project__button-colors other-text pageButton"
             onClick={handlePrevPage}
-        ><img src={backward} className="movePage"></img> </button> : null
+          >
+              <img src={backward} className="movePage"></img>
+          </button>
+          :
+          null
     }
-  
-
-    <label className="nPage">{page}</label>
+   <div className="nPage"> <label >{page+1}</label></div>
     {!lastPage ? 
         <button
-        className="project__button-colors other-text"
+        className="project__button-shape project__button-colors other-text pageButton"
         onClick={handleNextPage}
-          ><img src={forward} className="movePage"></img>
+          >
+              <img src={forward} className="movePage"></img>
         </button>
         :
         null    
