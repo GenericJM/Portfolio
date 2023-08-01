@@ -29,9 +29,10 @@ export default function Projects() {
     const [key, setKey] = useState(null);
     const projectList = useProjects(key)
     const [pagination, page, lastPage, setPage] = usePage(projectList);
-    
+
     return (
         <>
+         <a name="projects"></a>            
             <header className="default projects__header">
                 <h1 className="projects-title title">Projects ({projectList.length})</h1>
                 <div className="project__filter">
@@ -46,8 +47,9 @@ export default function Projects() {
                     )}
                 </div>
             </header>
-
+            <PageComponent setPage={setPage} page={page} lastPage={lastPage} />
             <section className="projects">
+            
                 {
                     pagination.map(content => {
                         return <Project content={content} setKey={setKey} key={content.link} />;
@@ -85,30 +87,35 @@ const Project = ({ content, setKey }) => {
 
     </article>
 }
-const PageComponent = ({setPage, page, lastPage }) => { 
-    const handleNextPage = () => { setPage(prevPage => prevPage+1) }
-    const handlePrevPage = () => { setPage(prevPage=>prevPage-1)}
-  return  <section className="pageButtons">
-    {page > 0 ?
-        <button
-            className="project__button-shape project__button-colors other-text pageButton"
-            onClick={handlePrevPage}
-          >
-              <img src={backward} className="movePage"></img>
-          </button>
-          :
-          null
-    }
-   <div className="nPage"> <label >{page+1}</label></div>
-    {!lastPage ? 
-        <button
-        className="project__button-shape project__button-colors other-text pageButton"
-        onClick={handleNextPage}
-          >
-              <img src={forward} className="movePage"></img>
-        </button>
-        :
-        null    
-    }
-   </section>
+const PageComponent = ({ setPage, page, lastPage }) => {
+    const handleNextPage = () => { setPage(prevPage => prevPage + 1) }
+    const handlePrevPage = () => { setPage(prevPage => prevPage - 1) }
+    return <section className="pageButtons">
+        <a href="#projects">
+            {page > 0 ?
+                <button
+                    className="project__button-shape project__button-colors other-text pageButton"
+                    onClick={handlePrevPage}
+                >
+                    <img src={backward} className="movePage"></img>
+                </button>
+                :
+                null
+            }
+        </a>
+        <div className="nPage"> <label >{page + 1}</label></div>
+        <a href="#projects">
+            {!lastPage ?
+                <button
+                    className="project__button-shape project__button-colors other-text pageButton"
+                    onClick={handleNextPage}
+                >
+                    <img src={forward} className="movePage"></img>
+                </button>
+                :
+                null
+            }
+        </a>
+
+    </section>
 }
