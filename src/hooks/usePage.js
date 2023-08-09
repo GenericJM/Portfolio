@@ -15,5 +15,11 @@ export default function usePage(list = []) {
         lastPage = end === list.length
 
     }
-    return [pagination,page,lastPage,setPage]
+   
+    let maxPages=[];
+    for(let i=0; i<(list.length/limit); i++){
+        maxPages.push(i+1);        
+    }
+    
+    return [pagination,page,lastPage,setPage,maxPages]
 }

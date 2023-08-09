@@ -10,9 +10,6 @@
     padding: 1em;
 }
 
-/* .projects-title{
-    margin-bottom: 0.5em;  
-} */
 .project__filter {
     display: flex;
     gap: 1em;
@@ -22,9 +19,6 @@
     display: flex;
     flex-direction: column;
     min-height: max-content;
-
-
-
     gap: 1em;
 }
 
@@ -50,7 +44,9 @@
     color: #4f4f4f;
 
 }
-
+.project__button-hover:hover{
+color: red;
+}
 .project-tag {
     background-color: transparent;
     border: none;
@@ -67,7 +63,7 @@
     display: flex;
     width: fit-content;
     justify-content: center;
-    margin: 0 auto;
+    margin: 1em auto;
 }
 .nPage{
     display: flex;
@@ -88,4 +84,5 @@
     padding-top: 5px;
 
 }
+
 

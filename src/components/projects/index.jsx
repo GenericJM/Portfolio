@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import "./projects.css"
 import { projects, tag } from "./projects"
 import usePage from "@/hooks/usePage"
 import forward from "@/assets/svg/forward.svg"
 import backward from "@/assets/svg/back.svg"
+import useProjects from "../../hooks/useProjects"
+
 
 const styles = {
     buttonSelected: {
@@ -13,26 +15,15 @@ const styles = {
     },
     button: {}
 }
-const useProjects = (keyword) => {
-    console.log(keyword);
-    const [projectList, setProjects] = useState(projects.project);
-    useEffect(() => {
-        keyword ? setProjects(projects.project.filter(x => x.tag.includes(keyword))) : setProjects(projects.project);
 
-    }, [keyword]
-
-    )
-    return projectList;
-}
-export default function Projects() {
-    //mover a un componente independiente
+export default function Projects() {    
     const [key, setKey] = useState(null);
     const projectList = useProjects(key)
-    const [pagination, page, lastPage, setPage] = usePage(projectList);
+    const [pagination, page, lastPage, setPage, maxPages] = usePage(projectList);
 
     return (
         <>
-         <a name="projects"></a>            
+            <a name="projects"></a>
             <header className="default projects__header">
                 <h1 className="projects-title title">Projects ({projectList.length})</h1>
                 <div className="project__filter">
@@ -47,9 +38,9 @@ export default function Projects() {
                     )}
                 </div>
             </header>
-            <PageComponent setPage={setPage} page={page} lastPage={lastPage} />
+            <PageComponent setPage={setPage} page={page} lastPage={lastPage} maxPages={maxPages} />
             <section className="projects">
-            
+
                 {
                     pagination.map(content => {
                         return <Project content={content} setKey={setKey} key={content.link} />;
@@ -57,7 +48,7 @@ export default function Projects() {
                 }
 
             </section>
-            <PageComponent setPage={setPage} page={page} lastPage={lastPage} />
+            <PageComponent setPage={setPage} page={page} lastPage={lastPage} maxPages={maxPages} />
         </>
 
     )
@@ -73,7 +64,18 @@ const Project = ({ content, setKey }) => {
 
         <div className="project__element-div">
             <div>
-                <div className="project__filter">{content.tag.map(tag => <button className="other-text project-tag" key={tag} onClick={() => { setKey(tag) }}>{tag}</button>)}</div>
+                <div className="project__filter">
+                    {content.tag.map(
+                        tag =>
+                            <button
+                                className="other-text project-tag"
+                                key={tag}
+                                onClick={
+                                    () => { setKey(tag) }
+                                    }>
+                                {tag}
+                            </button>)}
+                </div>
                 <h1 className="subtitle">{content.name}</h1>
 
             </div>
@@ -87,9 +89,11 @@ const Project = ({ content, setKey }) => {
 
     </article>
 }
-const PageComponent = ({ setPage, page, lastPage }) => {
+const PageComponent = ({ setPage, page, lastPage, maxPages }) => {
     const handleNextPage = () => { setPage(prevPage => prevPage + 1) }
     const handlePrevPage = () => { setPage(prevPage => prevPage - 1) }
+    console.log(maxPages)
+
     return <section className="pageButtons">
         <a href="#projects">
             {page > 0 ?
@@ -103,7 +107,10 @@ const PageComponent = ({ setPage, page, lastPage }) => {
                 null
             }
         </a>
-        <div className="nPage"> <label >{page + 1}</label></div>
+        {maxPages.map(x =>
+            <div className="nPage"> <label >{x}</label></div>
+
+        )}
         <a href="#projects">
             {!lastPage ?
                 <button
