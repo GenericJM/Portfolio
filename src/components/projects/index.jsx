@@ -5,7 +5,7 @@ import usePage from "@/hooks/usePage"
 import forward from "@/assets/svg/forward.svg"
 import backward from "@/assets/svg/back.svg"
 import useProjects from "../../hooks/useProjects"
-
+import Decimal from "@/assets/decimal"
 
 const styles = {
     buttonSelected: {
@@ -38,7 +38,7 @@ export default function Projects() {
                     )}
                 </div>
             </header>
-            <PageComponent setPage={setPage} page={page} lastPage={lastPage} maxPages={maxPages} />
+            <PageComponent setPage={setPage} page={page} lastPage={lastPage} maxPages={projectList.length} />
             <section className="projects">
 
                 {
@@ -48,7 +48,7 @@ export default function Projects() {
                 }
 
             </section>
-            <PageComponent setPage={setPage} page={page} lastPage={lastPage} maxPages={maxPages} />
+            <PageComponent setPage={setPage} page={page} lastPage={lastPage} maxPages={projectList.length} />
         </>
 
     )
@@ -92,8 +92,22 @@ const Project = ({ content, setKey }) => {
 const PageComponent = ({ setPage, page, lastPage, maxPages }) => {
     const handleNextPage = () => { setPage(prevPage => prevPage + 1) }
     const handlePrevPage = () => { setPage(prevPage => prevPage - 1) }
-    console.log(maxPages)
-
+    
+    console.log(new Decimal(10))
+    console.log(page+1)
+    let pages=[];    
+    for(let i=0;i<=3;i++){
+        let actualPage=page+2+i;
+        // if(actualPage>=(Math.round(maxPages/6))) break;        
+        if(i<3){
+            
+            pages.push(actualPage);
+        }
+        else{
+        pages.push("...")
+        pages.push((maxPages/6));
+    }
+    }
     return <section className="pageButtons">
         <a href="#projects">
             {page > 0 ?
@@ -106,9 +120,12 @@ const PageComponent = ({ setPage, page, lastPage, maxPages }) => {
                 :
                 null
             }
+             
         </a>
-        {maxPages.map(x =>
-            <div className="nPage"> <label >{x}</label></div>
+        
+        {pages.map(x =>
+           
+           <div className="nPage"> <label >{x}</label></div>
 
         )}
         <a href="#projects">

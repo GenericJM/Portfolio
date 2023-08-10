@@ -16,10 +16,10 @@ export default function usePage(list = []) {
 
     }
    
-    let maxPages=[];
-    for(let i=0; i<(list.length/limit); i++){
-        maxPages.push(i+1);        
-    }
+    // let maxPages=[];
+    // for(let i=0; i<(list.length/limit); i++){
+    //     maxPages.push(i+1);        
+    // }
     
-    return [pagination,page,lastPage,setPage,maxPages]
+    return [pagination,page,lastPage,setPage]
 }
