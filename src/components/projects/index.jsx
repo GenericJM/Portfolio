@@ -1,12 +1,9 @@
 import { useState } from "react"
 import "./projects.css"
-import { projects, tag } from "./projects"
+import { tag } from "./projects"
 import usePage from "@/hooks/usePage"
-import forward from "@/assets/svg/forward.svg"
-import backward from "@/assets/svg/back.svg"
 import useProjects from "../../hooks/useProjects"
-import Decimal from "@/assets/decimal"
-
+import ListOfPages from "../ListOfPages/ListOfPages"
 const styles = {
     buttonSelected: {
         backgroundColor: "#2F80ED",
@@ -16,7 +13,7 @@ const styles = {
     button: {}
 }
 
-export default function Projects() {    
+export default function Projects() {
     const [key, setKey] = useState(null);
     const projectList = useProjects(key)
     const [pagination, page, lastPage, setPage, maxPages] = usePage(projectList);
@@ -38,7 +35,7 @@ export default function Projects() {
                     )}
                 </div>
             </header>
-            <PageComponent setPage={setPage} page={page} lastPage={lastPage} maxPages={projectList.length} />
+            <ListOfPages setPage={setPage} page={page} lastPage={lastPage} maxPages={maxPages} />
             <section className="projects">
 
                 {
@@ -48,7 +45,7 @@ export default function Projects() {
                 }
 
             </section>
-            <PageComponent setPage={setPage} page={page} lastPage={lastPage} maxPages={projectList.length} />
+            <ListOfPages setPage={setPage} page={page} lastPage={lastPage} maxPages={maxPages} />
         </>
 
     )
@@ -72,7 +69,7 @@ const Project = ({ content, setKey }) => {
                                 key={tag}
                                 onClick={
                                     () => { setKey(tag) }
-                                    }>
+                                }>
                                 {tag}
                             </button>)}
                 </div>
@@ -89,57 +86,4 @@ const Project = ({ content, setKey }) => {
 
     </article>
 }
-const PageComponent = ({ setPage, page, lastPage, maxPages }) => {
-    const handleNextPage = () => { setPage(prevPage => prevPage + 1) }
-    const handlePrevPage = () => { setPage(prevPage => prevPage - 1) }
-    
-    console.log(new Decimal(10))
-    console.log(page+1)
-    let pages=[];    
-    for(let i=0;i<=3;i++){
-        let actualPage=page+2+i;
-        // if(actualPage>=(Math.round(maxPages/6))) break;        
-        if(i<3){
-            
-            pages.push(actualPage);
-        }
-        else{
-        pages.push("...")
-        pages.push((maxPages/6));
-    }
-    }
-    return <section className="pageButtons">
-        <a href="#projects">
-            {page > 0 ?
-                <button
-                    className="project__button-shape project__button-colors other-text pageButton"
-                    onClick={handlePrevPage}
-                >
-                    <img src={backward} className="movePage"></img>
-                </button>
-                :
-                null
-            }
-             
-        </a>
-        
-        {pages.map(x =>
-           
-           <div className="nPage"> <label >{x}</label></div>
 
-        )}
-        <a href="#projects">
-            {!lastPage ?
-                <button
-                    className="project__button-shape project__button-colors other-text pageButton"
-                    onClick={handleNextPage}
-                >
-                    <img src={forward} className="movePage"></img>
-                </button>
-                :
-                null
-            }
-        </a>
-
-    </section>
-}
