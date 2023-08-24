@@ -68,10 +68,11 @@ color: red;
 .nPage{
     display: flex;
     align-items: center;
-    margin: 0 1em;
-    border: 1px solid #000;
+    margin: 0 0.3em;
+    border: none;
     border-radius: 0.5em;
-    padding: 0.5em 0.8em;
+    padding: 0 0.6em;
+    cursor: pointer;
 }
 .movePage{
    

@@ -4,7 +4,7 @@ import { tag } from "./projects"
 import usePage from "@/hooks/usePage"
 import useProjects from "../../hooks/useProjects"
 import ListOfPages from "../ListOfPages/ListOfPages"
-const styles = {
+export const styles = {
     buttonSelected: {
         backgroundColor: "#2F80ED",
         color: "#fff",

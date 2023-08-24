@@ -58,8 +58,9 @@ const Personalinfo = () => {
           </div>
         </div>
         <p className="text">
-          Desarrollador motivado, que está dispuesto a aprender y
-          crear aplicaciones de interfaz de usuario sobresalientes.
+          Estoy buscando un puesto en un equipo de desarrollo web donde pueda usar mis habilidades y
+          experiencia para contribuir al desarrollo de productos de alta calidad. Estoy motivado
+          y siempre dispuesto a aprender cosas nuevas.
         </p>
       </section>
     </main>
