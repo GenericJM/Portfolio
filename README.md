@@ -29,8 +29,8 @@
 - [Overview](#overview)
 - [Built With](#built-with)
 - [Features](#features)
-- [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
+- [Contact](#contact)
 
 <!-- OVERVIEW -->
 
@@ -43,7 +43,7 @@
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 - [React](https://reactjs.org/)
-
+- [vite](https://vitejs.dev/)
 
 ## Features
 
